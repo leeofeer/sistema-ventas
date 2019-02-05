@@ -14,9 +14,27 @@
             </div>
 
             <div class="modal-body">
+                 <div class="form-group row">
+                    <div class="col-md-5">
+                        <label>Producto</label>
+                        <select class="form-control" id="addDetalleProductos"></select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label>Cantidad</label>
+                        <input type="number" class="form-control" id="addDetalleCantidad" value="1">
+                        <input type="hidden" class="" id="addDetalleIDP" value="">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Accion</label>
+                        <input type="button" class="btn btn-success" id="addDetalleAgregar" value="Agregar" onclick="addDetalleInsert();">
+                    </div>
+
+                </div>
                 <table id="grillaAddDetalle" class="table table-responsive table-condensed">
                     <thead>
-                    <th>Codigo Producto</th>
+                    <th>Codigo</th>
                     <th>Cantidad</th>
                     <th>Descripcion</th>
                     <th>Precio U.</th>
@@ -49,7 +67,6 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar</button>
             </div>
 
         </div>

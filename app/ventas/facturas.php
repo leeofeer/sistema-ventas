@@ -6,13 +6,13 @@
 		exit;
       }
 	$usuario_logueado=$_SESSION['usuario'];
-	$active_pedidos="active";
-	$active_facturas="";
+	$active_pedidos="";
+	$active_facturas="active";
 	$active_productos="";
 	$active_clientes="";
     $active_usuarios="";
     $active_apercierre = "";	
-	$title="Pedidos | SSoftware";
+	$title="Facturas | SSoftware";
   
 ?>
 <!DOCTYPE html>
@@ -32,11 +32,7 @@
 		<div class="panel panel-info">
 
             <div class="panel-heading">
-                <div class="btn-group pull-right">
-                    <a  href="nuevopedido.php" id="nuevop" target="_blanck" class="btn btn-info " ><span class="glyphicon glyphicon-plus" ></span> Nuevo Pedido</a>
-                </div>
-
-                <h4>Lista de Pedidos</h4>
+                <h4>Lista de Facturas</h4>
                 <div class="form-group row">
 
                     <label for="filtroFecha" class="col-md-1 control-label">Filtro Fecha</label>
@@ -62,7 +58,7 @@
 
 			<div class="panel-body">
 
-				<div id="grilla-pedido">
+				<div id="grilla-facturas">
 
 
 				</div>
@@ -74,28 +70,17 @@
 	</div>
 	<hr>
     <?php
-    //inclusion de modals
-    include("modals/modalVerDetalle.html");
-    include("modals/modalAddDetalle.html");
-    include("modals/modalAddRazonSocial.html");
-    
-    include("modals/modalAbrirCaja.html");
-    
-    include("modals/modalFactura.html");
+      include("modals/modalVerDetalle.html");
+      include("modals/modalCobrar.html");
     ?>
 
 	<?php
 	include("footer.php");
 	?>
-	<script type="text/javascript" src="js/pedidos.js"></script>
-	<script src="js/jqueryui.js"></script>
-  <script type="text/javascript" src="js/facturar.js"></script>
-  <script type="text/javascript" src="js/cajasPedido.js"></script>
+	<script type="text/javascript" src="js/facturas.js"></script>
 
   <script type="text/javascript">
-  	$( function() {
-  		$( document ).tooltip();
-  	});
+  	
   </script>
   </body>
 </html>

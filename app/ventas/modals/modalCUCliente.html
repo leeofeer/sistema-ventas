@@ -1,0 +1,73 @@
+
+
+
+
+
+<div class="modal fade" id="modalCUCliente" tabindex="-1" role="dialog" aria-labelledby="modalCUCliente" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="modalCUClienteTitle"></h5>
+                <h5 class="modal-title" > Razon Social</h5>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group" id="div_form">
+                    <table id="resultado" class="table table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <input type="hidden" name="idcli" id="idcliente" maxlength="30" class="form-control">
+                                <th>Razon Social</th>
+                                <td>
+                                <input type="text" name="rz" id="razonsocial" maxlength="30" class="form-control"> 
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>RUC</th>
+                                <td>
+                                     <input type="text" name="ruc" id="ruc" maxlength="30" class="form-control">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Direccion</th>
+                                <td> <input type="text" name="dir" id="direccion" maxlength="30" class="form-control"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Telefono</th><td> <input type="text" name="telefono" id="telefono" class="" placeholder="09xx-xxx-xxx"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Ciudad</th>
+                                <td><select id="idciudad" name="idciudad" class="form-control">
+                                    
+                                </select></td>
+                            </tr>
+
+                            <tr>
+                                <th><button id="guardar" onclick="guardarCambios('update')" class="btn btn-success">Guardar</button></th>
+                                <th><button id="cancelar" onclick="cancelarModal()" class="btn btn-secondary">Cancelar</button></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+	
+</script>

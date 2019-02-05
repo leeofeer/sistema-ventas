@@ -15,7 +15,12 @@ $db=new Database();
 	if ($_GET['action']=="clientes") {
 		$result = $db->query($_POST['sql']);
     	$clientes = $result->fetchAll(PDO::FETCH_ASSOC);
-    	echo json_encode($clientes);
+    	if ($clientes>0) {
+    		echo json_encode($clientes);
+    	}else{
+    		
+    	}
+    	
 		
 	}
 
@@ -23,6 +28,13 @@ $db=new Database();
 		$result = $db->query($_POST['sql']);
     	$productos = $result->fetchAll(PDO::FETCH_ASSOC);
     	echo json_encode($productos);
+		
+	}
+
+	if ($_GET['action']=="ciudades") {
+		$result = $db->query($_POST['sql']);
+    	$ciudades = $result->fetchAll(PDO::FETCH_ASSOC);
+    	echo json_encode($ciudades);
 		
 	}
 

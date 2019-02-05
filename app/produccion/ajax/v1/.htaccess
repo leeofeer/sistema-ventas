@@ -1,0 +1,6 @@
+
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^insumos/?$ insumos.php [NC,L]
+RewriteRule ^insumos/([0-9]+)/?$ insumos.php?id=$1 [NC,L]
+RewriteRule ^referenciales/?$ referenciales.php [NC,L]
+RewriteRule ^referenciales/([a-z]+)/?$ referenciales.php?t=$1 [NC,L]

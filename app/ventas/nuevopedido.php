@@ -3,6 +3,8 @@ session_start();
     if (!isset($_SESSION['idusuario'])) {
         header("location: login.php");
         exit;
+        }else if(!isset($_SESSION['idapertura']) || $_SESSION['idapertura']==""){
+            header("Location: cajaCerrada.html");
         }
     
     $active_pedidos="active";
@@ -11,6 +13,8 @@ session_start();
     $active_clientes="";
     $active_usuarios="";    
     $title="Pedidos Nuevo| SSoftware";
+    $usuario_logueado = $_SESSION['usuario'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -152,8 +156,8 @@ session_start();
             <input id="btngrabar" type="button" class="form-control btn-success" value="Grabar" disabled="" onclick="grabar('PENDIENTE');"/>
         </div>
         <div class="col-md-3">
-            <input id="btngrabarfactura" type="button" class="form-control btn-warning" value="Grabar & Facturar" disabled="" onclick="grabar();"/>
-
+         <!--   <input id="btngrabarfactura" type="button" class="form-control btn-warning" value="Grabar & Facturar" disabled="" onclick="grabar();"/>
+        -->
         </div>
 
         <div class="col-md-3">

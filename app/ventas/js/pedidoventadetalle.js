@@ -145,17 +145,21 @@ function grabar(estado){
         var nropedido = $("#nropedido").val();
         var nombrecli = $("#cliente").val();
         var idusuario = $("#idusuario").val();
+        var tabla = $("#grilla tbody").find("tr").text();
         
-        if (nombrecli=="") {
+        if (tabla=="") {
+            alert("CARGUE DETALLES");
+        }
+
+        else if (nombrecli=="") {
         alert("INTRODUZCA CLIENTE");
         $("#cliente").focus();
 
-        }else{
 
+        }else{
 
             var sql='INSERT INTO pedidos (id,nropedido,fechapedido,estado,nombrecli,idusuario) VALUES ';
             sql += '('+id+', '+nropedido+', CURRENT_DATE() ,"'+estado+'", "'+nombrecli+'", '+idusuario+');';
-            
 
             $.ajax({
                 url: "./ajax/guardarpedidos.php?accion=guardarPedido",
@@ -174,7 +178,6 @@ function grabar(estado){
 }
 
   function grabarDetalle(idpedido,tabla){ 
-	    var guardado = false;
         var tabla = $("#grilla tbody tr");
 
         //ciclo que genera cada insert
@@ -204,14 +207,11 @@ function grabar(estado){
                 success: function(data){
                    // console.log(data);
                     if (data=="GUARDADO") {
-                        guardado = true;
-                        console.log(guardado);
                         cancelar();
                     }//fin de if
                 }
 
             }); //fin de ajax
-        console.log(guardado);
         
     }); //fin del ciclo
 

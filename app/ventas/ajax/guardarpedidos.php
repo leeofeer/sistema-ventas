@@ -17,3 +17,23 @@ if ($_GET['accion']=="guardarDetalle") {
         echo 'GUARDADO';
     }
 }
+
+if ($_GET['accion']=="guardarDetalleModal") {
+
+    $insertDetalle = $db->query($_POST['sql']);
+    //echo $_POST['sql'];
+    if($insertDetalle){
+        echo 'GUARDADO';
+    }else{
+    	echo 'repetido';
+    }
+}
+
+if ($_GET['accion']=="eliminarDetalleModal") {
+
+    $deleteDetalle = $db->query($_POST['sql']);
+    if($deleteDetalle){
+        echo 'eliminado';
+    }
+}
+

@@ -1,0 +1,61 @@
+
+
+
+
+
+<div class="modal fade" id="modalAbrirCaja" tabindex="-1" role="dialog" aria-labelledby="modalAbrirCaja" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="modalAbrirCajaTitle">Abrir Caja</h4>
+                <h5 class="modal-title" id="modalTitleFecha" > </h5>
+            </div>
+
+            <div class="modal-body">
+            	<form action="/" id="form_abrirCaja">
+            		<div class="form-group row">
+                    	<div class="col-md-3">
+                    		<input type="hidden" name="idapertura" id="idapertura">
+                        	<label>Caja</label>
+                        	<select class="form-control" id="AbrirCajaIdCaja">
+                        		<option></option>
+                        	</select>
+                    	</div>
+
+                    	<div class="col-md-3">
+                        	<label>Monto Apertura</label>
+                        	<input type="number" class="form-control" id="AbrirCajaMontoApertura" value="50000">
+                    	</div>
+
+                        <div class="col-md-3">
+                            <label>SUCU.</label>
+                            <select class="form-control" id="AbrirCajaIdSuc" readonly="">
+                                <option></option>
+                            </select>
+                        </div>
+
+                    	<div class="col-md-3">
+                    		<label>Accion</label>
+                        	<input type="button" class="btn btn-success" id="abrirCajaAbrir" value="Abrir Caja" onclick="insertarCajaAbierta();">
+                    	</div>
+
+                        
+
+                	</div>
+           		 </form>
+            </div>
+
+
+            <div class="modal-footer">
+               
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	
+</script>

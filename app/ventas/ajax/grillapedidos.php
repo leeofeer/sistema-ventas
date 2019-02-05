@@ -18,10 +18,12 @@ if (isset($_GET['accion']) && $_GET['accion']="cargar") { ?>
 
 	//comprobacion de fechas
 	if (isset($_POST['condicion']) && $_POST['condicion']=='FECHA'){
+		//SI HAY FECHA
 	    $desde = $_POST['desde'];
 	    $hasta = $_POST['hasta'];
 	    $sql = "SELECT * FROM vspedidos WHERE fechapedido BETWEEN '$desde' AND '$hasta'  order by nropedido desc";
     }else{
+    	//SINO
 	    $sql = "SELECT * FROM vspedidos order by nropedido desc";
     }
 
@@ -55,7 +57,7 @@ if (isset($_GET['accion']) && $_GET['accion']="cargar") { ?>
 
 		echo '<td>';
 		if ($r['estado']!="FACTURADO") {
-			echo '<button class="btn btn-success" onclick="addDetalle('.$r['idpedido'].')">Agregar Detalle</button>';
+			echo '<button class="btn btn-success addDetalle" onclick="addDetalle('.$r['idpedido'].')">Agregar Detalle</button>';
 		}else{
 			echo '<button class="btn btn-success" onclick="verDetalle('.$r['idpedido'].')">Ver Detalle</button>';
 		}
@@ -64,9 +66,12 @@ if (isset($_GET['accion']) && $_GET['accion']="cargar") { ?>
 
         if ($r['estado']!="FACTURADO") {
             echo '<td>';
-            echo '<button class="btn btn-warning" onclick="facturar('.$r['idpedido'].')">Facturar</button>';
+            echo '<button class="btn btn-warning facturar" onclick="facturar('.$r['idpedido'].')">Facturar</button>';
             echo '</td>';
         }else{
+        	echo '<td>';
+            echo '<button class="btn btn-warning facturar" onclick="imprimirFactura('.$r['idpedido'].')">Imprimir Factura</button>';
+            echo '</td>';
 
         }
 
