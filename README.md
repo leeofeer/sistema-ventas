@@ -19,3 +19,5 @@ Registra el pago.
 Al final del dia el cajero cierra la caja, el sistgma emite un resumen de monto apertura y de cierre.
 
 Rest Api:
+produccion/ajax/v1/insumos GET
+produccion/ajax/v1/referenciales\nombre_tabla\ GET
