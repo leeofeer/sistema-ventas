@@ -21,3 +21,6 @@ Al final del dia el cajero cierra la caja, el sistgma emite un resumen de monto 
 Rest Api:
 produccion/ajax/v1/insumos GET
 produccion/ajax/v1/referenciales\nombre_tabla\ GET
+
+Backup de la bd dentro de la carpeta /bd
+configuracion global de la base de datos en /config/dbhandler
