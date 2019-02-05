@@ -17,3 +17,5 @@ El cajero busca el numero de factura en su pantalla para proceder al cobro.
 Rellena los datos del cobro (Solo disponible efectivo, tarjeta en construccion) 
 Registra el pago.
 Al final del dia el cajero cierra la caja, el sistgma emite un resumen de monto apertura y de cierre.
+
+Rest Api:
