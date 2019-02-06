@@ -1,6 +1,6 @@
 # sistema-ventas
 Sistema CRUD de ventas y produccion (En Construcción) para comida rápida (copetin, hamburguesería)
-Prueba en 
+Prueba en https://omtitech.000webhostapp.com/demo/
 
 usuario desarrollador: user admin, password admin
 usuario cajero: usuario cajero, password 1234
