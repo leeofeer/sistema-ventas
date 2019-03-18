@@ -1,6 +1,18 @@
-
+ 
 RewriteEngine On # Turn on the rewriting engine
 RewriteRule ^insumos/?$ insumos.php [NC,L]
 RewriteRule ^insumos/([0-9]+)/?$ insumos.php?id=$1 [NC,L]
+
 RewriteRule ^referenciales/?$ referenciales.php [NC,L]
-RewriteRule ^referenciales/([a-z]+)/?$ referenciales.php?t=$1 [NC,L]
+RewriteRule ^referenciales/([a-z]+)?$ referenciales.php?t=$1 [NC,L]
+RewriteRule ^referenciales/([a-z]+)/([0-9]+)?$ referenciales.php?t=$1&id=$2 [NC,L]
+
+RewriteRule ^pedidos/?$ pedidos.php [NC,L]
+RewriteRule ^pedidos/([0-9]+)/?$ pedidos.php?var=$1 [NC,L]
+RewriteRule ^pedidos/([a-z]+)/?$ pedidos.php?var=$1 [NC,L]
+
+RewriteRule ^ordenproduccion/?$ ordenproduccion.php [NC,L]
+RewriteRule ^ordenproduccion/([0-9]+)/?$ ordenproduccion.php?id=$1 [NC,L]
+
+RewriteRule ^ordenproducciondetalle/?$ ordenproducciondetalle.php [NC,L]
+RewriteRule ^ordenproducciondetalle/([0-9]+)/?$ ordenproducciondetalle.php?id=$1 [NC,L]

@@ -9,10 +9,12 @@ function recuperarInsumos(id=0){
 		});
 	}else{
 		$.ajax({
-		url: "./ajax/v1/insumos",
+		url: "./ajax/v1/insumos/",
 		dataType: "json",
 		success: function(data){
-			console.table(data);
+			let col = data[0];
+
+			console.log(col);
 		}
 	});
 	}
@@ -27,9 +29,8 @@ function addInsumo(){
 	var idmarca = $("#idmarca").val();
 	var idproveedor = $("#idproveedor").val();
 	$.ajax({
-		url: "./ajax/v1/insumos",
+		url: "http://localhost:8080/insumos",
 		method: "post",
-		dataType: "json",
 		data: {descripcion:descripcion, idimpuesto:idimpuesto, idmarca:idmarca, idproveedor:idproveedor},
 		success: function(data){
 			console.log(data);
@@ -63,3 +64,4 @@ function updInsumo(idinsumo){
 		}
 	});
 }
+

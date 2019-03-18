@@ -18,12 +18,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<?php echo $active_pedidos;?>"><a target="_blank" href="index.php"> Pedidos <span class="sr-only">(current)</span></a></li>
-        <li class="<?php echo $active_facturas;?>"><a target="_blank" href="facturas.php">Facturas <span class="sr-only">(current)</span></a></li>
-        <li class="<?php echo $active_cobros;?>"><a target="_blank" href="cobros.php">Cobros </a></li>
-        <li class="<?php echo $active_productos;?>"><a target="_blank" href="productos.php"> Productos</a></li>
-        <li class="<?php echo $active_apercierre;?>"><a target="_blank" href="apertura.php">Apertura & Cierre de Cajas</a></li>
-		<li class="<?php echo $active_clientes;?>"><a target="_blank" href="clientes.php">Clientes</a></li>
+        <li class="<?php echo $active_ordenes;?>"><a target="_blank" href="index.php"> Ordenes <span class="sr-only">(current)</span></a></li>
+        <li class="<?php echo $active_produccion;?>"><a target="_blank" href="facturas.php">Produccion <span class="sr-only">(current)</span></a></li>
+        <li class="<?php echo $active_productos;?>"><a target="_blank" href="cobros.php">Productos </a></li>
+        <li class="<?php echo $active_recetas;?>"><a target="_blank" href="productos.php"> Recetas</a></li>
+        <li class="<?php echo $active_control;?>"><a target="_blank" href="apertura.php">Control Produccion</a></li>
+		<li class="<?php echo $active_mermas;?>"><a target="_blank" href="clientes.php">Mermas</a></li>
 		<!--<li class="<?php// echo $active_usuarios;?>"><a target="_blank" href="usuarios.php">Usuarios</a></li> -->
 		
       </ul>
@@ -54,20 +54,7 @@
 
                                     <div class="divider">
                                     </div>
-
-                                    <p><span>NRO CAJA: <label id="nrocaja">
-                                       <?php if(isset($_SESSION['idcaja'])){
-                                       echo $_SESSION['idcaja'];}?>
-                                    </label></span></p>
-
-                                    <div class="divider">
-                                    </div>
-
-                                    <p><span>APERTURA: <label id="idapertura">
-                                       <?php if(isset($_SESSION['idapertura'])){
-                                       echo $_SESSION['idapertura'];}?>
-                                    </label></span></p>
-                      
+                    
                                 </div>
                             </div>
 

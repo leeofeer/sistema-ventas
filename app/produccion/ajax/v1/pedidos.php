@@ -9,15 +9,17 @@ $request_method = $_SERVER["REQUEST_METHOD"];
 
 //de acuerdo al verbo se invoca los metodos 
 if ($request_method=="GET") {
-	$tabla = $_GET['t'];
-
+	$tabla = "pedidos";
 	//filtro por id
-	if(isset($_GET['id'])){
-		getData($tabla,$_GET['id']);
-	}else{
+	if(isset($_GET['var'])){
+		getData($tabla,$_GET['var']);
+	}else if(isset($_GET['var'])){
+		getData($tabla,$_GET['var']);
+	}
+
+	else{
 	//listar todos
-		$tabla = $_GET['t'];
-		getData($tabla);
+		getData($tabla,0);
 	}
 	
 }
@@ -40,13 +42,19 @@ if ($request_method=="PUT") {
 }
 
 
-function getData($tabla,$id=0){
+function getData($tabla,$var){
 	$sql = "";
-	if ($id==0) {
-		$sql = "SELECT * FROM $tabla";
-	}else{
-		$sql = "SELECT * FROM $tabla where id=".$id;
+	if($var==="y"){
+		$sql = "SELECT * FROM $tabla where control='PENDIENTE' order by fechapedido desc";
 	}
+
+	if ($var===0) {
+		$sql = "SELECT * FROM $tabla";
+	}
+	if($var>0){
+		$sql = "SELECT * FROM $tabla where id=".$var;
+	 
+	 }
 	
 	$db=new Database();
 	$result = $db->query($sql);
@@ -55,6 +63,7 @@ function getData($tabla,$id=0){
 		$data = $result->fetchAll(PDO::FETCH_ASSOC);
     	if ($data>0) {
     		header('Content-Type: application/json');
+    		
     		echo json_encode($data);
     	}else{
     		$response=array(

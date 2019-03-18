@@ -9,22 +9,22 @@ $request_method = $_SERVER["REQUEST_METHOD"];
 
 //de acuerdo al verbo se invoca los metodos 
 if ($request_method=="GET") {
-	$tabla = $_GET['t'];
+	$tabla = "vsordenproducciondetalle";
 
 	//filtro por id
 	if(isset($_GET['id'])){
 		getData($tabla,$_GET['id']);
-	}else{
+	}
+	else{
 	//listar todos
-		$tabla = $_GET['t'];
 		getData($tabla);
 	}
 	
 }
 
 if ($request_method=="POST") {
-	$tabla = $_GET['t'];
-	addRecord($tabla);
+	
+	//addRecord($tabla);
 }
 
 if ($request_method=="DELETE") {
@@ -42,10 +42,11 @@ if ($request_method=="PUT") {
 
 function getData($tabla,$id=0){
 	$sql = "";
-	if ($id==0) {
-		$sql = "SELECT * FROM $tabla";
+	
+	if($id>0){
+		$sql = "SELECT * FROM $tabla where idorden=".$id;
 	}else{
-		$sql = "SELECT * FROM $tabla where id=".$id;
+		$sql = "SELECT * FROM $tabla";
 	}
 	
 	$db=new Database();

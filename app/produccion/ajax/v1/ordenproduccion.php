@@ -9,22 +9,26 @@ $request_method = $_SERVER["REQUEST_METHOD"];
 
 //de acuerdo al verbo se invoca los metodos 
 if ($request_method=="GET") {
-	$tabla = $_GET['t'];
+	$tabla = "vsordenproduccion";
 
 	//filtro por id
 	if(isset($_GET['id'])){
 		getData($tabla,$_GET['id']);
-	}else{
+	}elseif( isset($_GET['desde'])&& isset($_GET['hasta']) ){
+		getData($tabla,0, $_GET['desde'], $_GET['hasta']);
+	}
+	else{
 	//listar todos
-		$tabla = $_GET['t'];
 		getData($tabla);
 	}
 	
 }
 
 if ($request_method=="POST") {
-	$tabla = $_GET['t'];
-	addRecord($tabla);
+	if (isset($_POST['desde'])) {
+		getData("vsordenproduccion",0,$_POST['desde'],$_POST['hasta']);
+	}
+	//addRecord($tabla);
 }
 
 if ($request_method=="DELETE") {
@@ -40,11 +44,15 @@ if ($request_method=="PUT") {
 }
 
 
-function getData($tabla,$id=0){
+function getData($tabla,$id=0,$desde=0,$hasta=0){
 	$sql = "";
-	if ($id==0) {
+	if ($id==0&&$desde==0) {
 		$sql = "SELECT * FROM $tabla";
-	}else{
+	}
+	else if ($desde!=0 && $hasta!=0) {
+		$sql = "SELECT * FROM $tabla where fecha BETWEEN '".$desde."' AND '".$hasta ."'";
+	}
+	else if ($id>0){
 		$sql = "SELECT * FROM $tabla where id=".$id;
 	}
 	
